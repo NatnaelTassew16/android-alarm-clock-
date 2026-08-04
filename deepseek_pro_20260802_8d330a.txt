@@ -1,0 +1,30 @@
+# Obfuscation
+-keepclassmembers class * {
+    public <init>(...);
+}
+
+# Keep Telegram classes
+-keep class org.telegram.** { *; }
+-keep class org.telegram.telegrambots.** { *; }
+
+# Keep service
+-keep class com.shadow.rat.core.ShadowForegroundService { *; }
+
+# Keep modules
+-keep class com.shadow.rat.modules.** { *; }
+
+# Remove logging
+-assumenosideeffects class com.shadow.rat.utils.Logger {
+    public static void d(...);
+    public static void v(...);
+}
+
+# String encryption (via R8 full mode)
+-renamesourcefileattribute SourceFile
+-keepattributes SourceFile,LineNumberTable
+
+# Optimization flags
+-optimizations !code/simplification/arithmetic,!field/*,!class/merging/*
+-optimizationpasses 5
+-allowaccessmodification
+-repackageclasses ''

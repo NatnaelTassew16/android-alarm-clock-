@@ -1,0 +1,6 @@
+{
+  "name": "Alarm Clock",
+  "description": "A feature-packed Material 3 Alarm Clock app with custom repeats, snooze, ringtones, backup/restore, and full-screen alarm alerts.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
