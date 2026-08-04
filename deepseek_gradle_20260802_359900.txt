@@ -1,0 +1,43 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    compileSdk 34
+    
+    defaultConfig {
+        applicationId "com.shadow.rat"
+        minSdk 21
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+    }
+    
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 
+                'proguard-rules.pro'
+        }
+        debug {
+            minifyEnabled false
+            debuggable true
+        }
+    }
+}
+
+dependencies {
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'androidx.core:core:1.12.0'
+    implementation 'androidx.work:work-runtime:2.9.0'
+    implementation 'com.google.android.gms:play-services-location:21.0.1'
+    implementation 'org.telegram:telegrambots:6.7.0'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.16.1'
+    implementation 'org.apache.httpcomponents:httpclient:4.5.14'
+    implementation 'javax.inject:javax.inject:1'
+    
+    // For testing
+    testImplementation 'junit:junit:4.13.2'
+    testImplementation 'org.mockito:mockito-core:5.6.0'
+    androidTestImplementation 'androidx.test:runner:1.5.2'
+}
